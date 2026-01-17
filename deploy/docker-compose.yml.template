@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  demo-app:
+    image: ${REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}
+    container_name: demo-hello-world
+    restart: unless-stopped
+    networks:
+      - traefik-public
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    labels:
+      # Enable Traefik
+      - "traefik.enable=true"
+      
+      # HTTP Router
+      - "traefik.http.routers.demo-app.rule=Host(`demo.jsoftsolutions.in`)"
+      - "traefik.http.routers.demo-app.entrypoints=websecure"
+      - "traefik.http.routers.demo-app.tls.certresolver=letsencrypt"
+      
+      # Service
+      - "traefik.http.services.demo-app.loadbalancer.server.port=3000"
+      
+      # Health check
+      - "traefik.http.services.demo-app.loadbalancer.healthcheck.path=/health"
+      - "traefik.http.services.demo-app.loadbalancer.healthcheck.interval=10s"
+      - "traefik.http.services.demo-app.loadbalancer.healthcheck.timeout=3s"
+      
+      # Metadata
+      - "traefik.http.routers.demo-app.service=demo-app"
+
+networks:
+  traefik-public:
+    external: true
