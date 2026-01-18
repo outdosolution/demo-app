@@ -310,10 +310,7 @@ jobs:
         run: |
           # SSH key is mounted at /root/.ssh/deploy_key from docker-compose
           mkdir -p ~/.ssh
-          if [ -f /root/.ssh/deploy_key ]; then
-            cp /root/.ssh/deploy_key ~/.ssh/deploy_key
-            chmod 600 ~/.ssh/deploy_key
-          fi
+          chmod 600 /root/.ssh/deploy_key 2>/dev/null || true
           ssh-keyscan -H $PRODUCTION_HOST >> ~/.ssh/known_hosts 2>/dev/null || true
           echo "SSH key configured for deployment"
 
@@ -467,10 +464,7 @@ jobs:
         run: |
           # SSH key is mounted at /root/.ssh/deploy_key from docker-compose
           mkdir -p ~/.ssh
-          if [ -f /root/.ssh/deploy_key ]; then
-            cp /root/.ssh/deploy_key ~/.ssh/deploy_key
-            chmod 600 ~/.ssh/deploy_key
-          fi
+          chmod 600 /root/.ssh/deploy_key 2>/dev/null || true
           ssh-keyscan -H $PRODUCTION_HOST >> ~/.ssh/known_hosts 2>/dev/null || true
 
       - name: Execute Rollback
@@ -531,10 +525,7 @@ jobs:
         run: |
           # SSH key is mounted at /root/.ssh/deploy_key from docker-compose
           mkdir -p ~/.ssh
-          if [ -f /root/.ssh/deploy_key ]; then
-            cp /root/.ssh/deploy_key ~/.ssh/deploy_key
-            chmod 600 ~/.ssh/deploy_key
-          fi
+          chmod 600 /root/.ssh/deploy_key 2>/dev/null || true
           ssh-keyscan -H $PRODUCTION_HOST >> ~/.ssh/known_hosts 2>/dev/null || true
 
       - name: Cleanup Old Images on Production
