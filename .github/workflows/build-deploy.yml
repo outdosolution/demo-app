@@ -325,8 +325,8 @@ jobs:
         run: |
           echo "Deploying version ${VERSION} (${IMAGE_TAG}) to production..."
           
-          # Copy deployment files using SSH key
-          scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -r ./deploy/ ${PRODUCTION_USER}@${PRODUCTION_HOST}:${{ env.DEPLOY_PATH }}/
+          # Copy deployment files using SSH key (copy contents, not the folder)
+          scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ./deploy/* ${PRODUCTION_USER}@${PRODUCTION_HOST}:${{ env.DEPLOY_PATH }}/
           
           # Execute deployment with automatic rollback on failure
           ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${PRODUCTION_USER}@${PRODUCTION_HOST} << 'ENDSSH'
