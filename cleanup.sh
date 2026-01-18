@@ -9,7 +9,7 @@
 # - Production server
 # - GitHub repository (manual step)
 # =============================================================================
-
+# test commit
 set -e
 
 REGISTRY="registry.jsoftsolutions.in"
