@@ -249,9 +249,8 @@
     </footer>
 
     <script>
-        // Set target date to 1 month from now
-        const now = new Date();
-        const targetDate = new Date(now.getFullYear(), now.getMonth() + 1, now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds());
+        // Set target date to March 2, 2026 (exactly 1 month from Feb 2, 2026)
+        const targetDate = new Date('2026-03-02T18:01:39');
 
         function updateTimer() {
             const currentTime = new Date();
