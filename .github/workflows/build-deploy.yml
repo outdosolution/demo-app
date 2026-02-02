@@ -325,8 +325,8 @@ jobs:
           # Ensure deployment directory exists and has correct permissions
           ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${PRODUCTION_USER}@${PRODUCTION_HOST} "sudo mkdir -p ${{ env.DEPLOY_PATH }} && sudo chown ${PRODUCTION_USER}:${PRODUCTION_USER} ${{ env.DEPLOY_PATH }}"
           
-          # Copy deployment files using SSH key
-          scp -r -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ./deploy/. ${PRODUCTION_USER}@${PRODUCTION_HOST}:${{ env.DEPLOY_PATH }}/
+          # Copy deployment files using SSH key using tar for reliability
+          tar -cf - -C ./deploy . | ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${PRODUCTION_USER}@${PRODUCTION_HOST} "tar -xf - -C ${{ env.DEPLOY_PATH }}"
           
           # Execute deployment with automatic rollback on failure
           ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${PRODUCTION_USER}@${PRODUCTION_HOST} << 'ENDSSH'
