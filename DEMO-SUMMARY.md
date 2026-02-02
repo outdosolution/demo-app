@@ -109,7 +109,7 @@ git push -u origin main
 ### 4. Watch Deployment
 
 - **GitHub**: https://github.com/YOUR_USERNAME/demo-hello-world/actions
-- **Production**: https://demo.jsoftsolutions.in
+- **Production**: https://samvikresearch.com
 
 ---
 
@@ -135,7 +135,7 @@ git push origin main
 # - Workflow marked as failed
 
 # 4. Verify production still works
-curl https://demo.jsoftsolutions.in/health  # Should return 200 OK
+curl https://samvikresearch.com/health  # Should return 200 OK
 
 # 5. Fix and redeploy
 git revert HEAD
@@ -192,7 +192,7 @@ Then manually delete the GitHub repository.
 ✅ Container running on VM-2
 ✅ Health checks passing
 ✅ HTTPS certificate issued
-✅ Application accessible at https://demo.jsoftsolutions.in
+✅ Application accessible at https://samvikresearch.com
 ```
 
 ### Successful Rollback Test

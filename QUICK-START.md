@@ -107,7 +107,7 @@ git push -u origin main
    ↓
 6. Deploys to Production
    ↓
-7. Test at https://demo.jsoftsolutions.in
+7. Test at https://samvikresearch.com
    ↓
 8. Test Rollback (break health check)
    ↓
@@ -127,7 +127,7 @@ Before testing, ensure you have:
 - [ ] 5 GitHub secrets configured
 - [ ] SSH access to VM-2 (129.159.21.78)
 - [ ] Registry credentials
-- [ ] DNS configured (demo.jsoftsolutions.in → 129.159.21.78)
+- [ ] DNS configured (samvikresearch.com → 129.159.21.78)
 
 ---
 
@@ -149,9 +149,9 @@ After deployment:
 
 | Endpoint | URL |
 |----------|-----|
-| **Root** | https://demo.jsoftsolutions.in/ |
-| **Health** | https://demo.jsoftsolutions.in/health |
-| **HTML** | https://demo.jsoftsolutions.in/html |
+| **Root** | https://samvikresearch.com/ |
+| **Health** | https://samvikresearch.com/health |
+| **HTML** | https://samvikresearch.com/html |
 
 ---
 
@@ -228,7 +228,7 @@ You'll know it works when:
 1. ✅ Local app runs on http://localhost:3000
 2. ✅ Docker container runs successfully
 3. ✅ GitHub Actions workflow completes
-4. ✅ App accessible at https://demo.jsoftsolutions.in
+4. ✅ App accessible at https://samvikresearch.com
 5. ✅ Health checks pass
 6. ✅ Rollback works when health check fails
 7. ✅ Fixed deployment succeeds
@@ -240,7 +240,7 @@ You'll know it works when:
 1. **Read**: `TESTING-GUIDE.md` for detailed instructions
 2. **Run**: `./test-and-deploy.sh` to start testing
 3. **Monitor**: GitHub Actions and production server
-4. **Verify**: Application works at https://demo.jsoftsolutions.in
+4. **Verify**: Application works at https://samvikresearch.com
 5. **Test**: Automatic rollback
 6. **Cleanup**: Run `./cleanup.sh` when done
 

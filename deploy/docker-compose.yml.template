@@ -13,7 +13,7 @@ services:
       - "traefik.enable=true"
       
       # HTTP Router
-      - "traefik.http.routers.demo-app.rule=Host(`demo.jsoftsolutions.in`)"
+      - "traefik.http.routers.demo-app.rule=Host(`samvikresearch.com`)"
       - "traefik.http.routers.demo-app.entrypoints=websecure"
       - "traefik.http.routers.demo-app.tls.certresolver=letsencrypt"
       

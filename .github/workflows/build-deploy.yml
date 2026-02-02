@@ -442,7 +442,7 @@ jobs:
           echo "✅ Deployment successful!"
           echo "Version: ${{ needs.prepare.outputs.version }}"
           echo "SHA: ${{ needs.prepare.outputs.sha_short }}"
-          echo "URL: https://demo.jsoftsolutions.in"
+          echo "URL: https://samvikresearch.com"
 
       - name: Notify Failure
         if: failure()

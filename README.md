@@ -67,7 +67,7 @@ The CI/CD pipeline will:
 
 ## 🌐 Production URL
 
-After deployment: `https://demo.jsoftsolutions.in`
+After deployment: `https://samvikresearch.com`
 
 ## 🔄 Automatic Rollback
 

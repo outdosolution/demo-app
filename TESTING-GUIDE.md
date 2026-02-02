@@ -234,13 +234,13 @@ cat .current_version
 
 ```bash
 # Test health endpoint
-curl https://demo.jsoftsolutions.in/health
+curl https://samvikresearch.com/health
 
 # Test main endpoint
-curl https://demo.jsoftsolutions.in/
+curl https://samvikresearch.com/
 
 # Or open in browser
-open https://demo.jsoftsolutions.in/html
+open https://samvikresearch.com/html
 ```
 
 **Expected results:**
@@ -308,7 +308,7 @@ Rolling back to: abc1234
 **Verify Production Still Works:**
 ```bash
 # Should still return 200 OK (old version)
-curl https://demo.jsoftsolutions.in/health
+curl https://samvikresearch.com/health
 ```
 
 #### 6.4 Fix and Redeploy
