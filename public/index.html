@@ -115,6 +115,18 @@
             border-radius: 20px;
             padding: 2rem 1rem;
             transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+        }
+
+        .timer-box:not(:last-child)::after {
+            content: ":";
+            position: absolute;
+            right: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 800;
         }
 
         .timer-box:hover {
@@ -222,19 +234,19 @@
         <div class="countdown" id="timer">
             <div class="timer-box">
                 <span class="timer-val" id="days">00</span>
-                <span class="timer-label">Days</span>
+                <span class="timer-label">Day</span>
             </div>
             <div class="timer-box">
                 <span class="timer-val" id="hours">00</span>
-                <span class="timer-label">Hours</span>
+                <span class="timer-label">hours</span>
             </div>
             <div class="timer-box">
                 <span class="timer-val" id="minutes">00</span>
-                <span class="timer-label">Min</span>
+                <span class="timer-label">min</span>
             </div>
             <div class="timer-box">
                 <span class="timer-val" id="seconds">00</span>
-                <span class="timer-label">Sec</span>
+                <span class="timer-label">sec</span>
             </div>
         </div>
 
